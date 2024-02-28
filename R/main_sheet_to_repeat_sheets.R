@@ -194,6 +194,7 @@ clean_data.tool8$V_list_of_all_members <- clean_data.tool8$V_list_of_all_members
   select(any_of(meta_cols), everything())
 
 clean_data.tool8$Subjects_Added <- clean_data.tool8$Subjects_Added |>
+  mutate(PARENT_KEY = as.character(PARENT_KEY)) |>
   left_join(select(clean_data.tool8$data, any_of(meta_cols), KEY), by = c("PARENT_KEY" = "KEY")) |>
   select(any_of(meta_cols), everything())
 
