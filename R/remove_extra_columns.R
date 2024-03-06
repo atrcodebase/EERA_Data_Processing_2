@@ -11,6 +11,7 @@ extra_cols.tool1 <- c(
   "Class9_N_Sample",	"Class10_N_Sample",	"Class11_N_Sample",	"Class12_N_Sample", "Province_Climate", "Survey_Language", "Survey_Language_Other", "IP_Name", "Interviewee_Respondent_Type",
   "Interviewee_Respondent_Type_Other", "Village", "instanceID", "formdef_version", 
   "School_CBE_Name", "Type_Of_School_CBE_Based_On_The_Sample_DariPashto", "TPMA_Location_Name", "Entity_Type", "Academic_Year", "acknowledge", "A28", # New
+  "District_SV", # New
   
   # PII
   "B2", "B5A1", "B5A2","C5", "C6A1", "C6A2", "C12A1", "C12A4", "C15A1", 
@@ -28,7 +29,9 @@ extra_cols.tool1 <- c(
   
   
   # Captions
-  "B19_Caption", "B20_Caption", "F2_Caption", "J24_Caption", "L2_Caption", "Please_Add_Any_Relevant_Photo_caption",
+  "B19_Caption", "B20_Caption", "F2_Caption", "J24_Caption", "L2_Caption", "Please_Add_Any_Relevant_Photo_caption", "A32_Caption",
+  "F2_2_Caption", "F2_3_Caption", "F4_Caption",	"F4_2_Caption",	"F4_3_Caption", # NEW
+  
   
   # Notes and Re-coded
   "interview_to_be_conducted_with_English", "interview_to_be_conducted_with_Dari", "interview_to_be_conducted_with_Pashto", "Surveyor_Comments",
@@ -41,6 +44,9 @@ extra_cols.tool1 <- c(
   "SET-OF-Weekly_Class_Schedule",	"Count_Weekly_Class_Schedule_Photo",	"Grades_Curriculum_count", "SET-OF-Grades_Curriculum",
   "Subjects_Detail_count", "SET-OF-Subjects_Detail", "Education_Quality_count",	"SET-OF-Education_Quality", "SET-OF-Relevant_photos",
   "School_indx", "School_rep",
+  "Weekly_Schedule_Old_count",	"SET-OF-Weekly_Schedule_Old", "Weekly_Schedule_New_count",	"SET-OF-Weekly_Schedule_New", # NEW
+  "Additional_Subjects_count",	"SET-OF-Additional_Subjects",	"Count_Additional_Subjects", # NEW
+
   
   # FDE Cols
   "FDE_Dari_Hours", "FDE_Mathematics_Hours", "FDE_Drawing_Hours", "FDE_Life_Skills_Hours", "FDE_Calligraphy_Hours", "FDE_English_Hours", "FDE_Pashto_Hours", "FDE_Social_Studies_Hours", "FDE_Arabic_Hours",
@@ -56,6 +62,7 @@ extra_cols.tool9 <- c(
   "Type_Of_Visit", "If_not_a_first_Site_Visit_state_Original_Site_Visit_ID",
   "Reporting_Period", "tpma_location_id", "Province_Climate", "Survey_Language", "Survey_Language_Other", "Interviewee_Respondent_Type", "Interviewee_Respondent_Type_Other",
   "Sample_info_correct", "Village", "instanceID", "formdef_version", 
+  'ID_Check', 'IP_Name', 'TPMA_Location_Name', 'Entity_Type',	'Academic_Year',	'acknowledge', 'B6_CBE_Name',# NEW
 
   
   # PII 
@@ -63,12 +70,15 @@ extra_cols.tool9 <- c(
   
   # GPS
   "Geopoint1-Latitude",	"Geopoint1-Longitude",	"Geopoint1-Altitude",	"Geopoint1-Accuracy",
+  'Geopoint2-Latitude',	'Geopoint2-Longitude',	'Geopoint2-Altitude',	'Geopoint2-Accuracy', # NEW
+  
   
   # URL
   "text_audit_full",
   
   # Captions
   "A7_Photo1_Caption", "A7_Photo2_QA_Photo_Caption", "B2_Photo_Caption",
+  'B6_Logbook_Photo_Caption', 'Please_Add_Any_Relevant_Photo_caption',#NEW
   
   # Notes and Re-coded
   "Sample_Type",
@@ -88,12 +98,14 @@ extra_cols.tool8 <- c(
   "Line_Ministry_Project_Id", "Line_Ministry_SubProject_Id", "Line_Ministry_Sub_Project_Name_And_Description", "Type_Of_Implementing_Partner", "Type_Of_Site_Visit", "Type_Of_Visit", "If_not_a_first_Site_Visit_state_Original_Site_Visit_ID",
   "Reporting_Period", "tpma_location_id",  "Province_Climate", "Survey_Language", "Survey_Language_Other", "IP_Name", "Interviewee_Respondent_Type", "Interviewee_Respondent_Type_Other", "Sample_info_correct", "Village",
   "instanceID", "formdef_version",
+  "ID_Check", "School_CBE_Name", 'TPMA_Location_Name',	'Entity_Type',	'Academic_Year',	'acknowledge', 'B2', # NEW
   
   # PII 
   "C2", "Respondent_Phone_Number1", "Respondent_Phone_Number2", "Respondent_Full_Name", "Respondent1_Phone_Number", "Respondent2_Phone_Number", "E18", 
   
   # GPS
   "Geopoint1-Latitude",	"Geopoint1-Longitude",	"Geopoint1-Altitude",	"Geopoint1-Accuracy",
+  'Geopoint2-Latitude',	'Geopoint2-Longitude',	'Geopoint2-Altitude',	'Geopoint2-Accuracy',# NEW
   
   # URL
   "text_audit_full",
@@ -101,7 +113,7 @@ extra_cols.tool8 <- c(
   # Captions
   "B5_Caption", "E22_Photo1_Caption", "E22_Photo2_Caption", "E22_Photo3_Caption", "E22_Photo4_Caption", "E22_Photo5_Caption", "J4_Students_Enrolment_Book_Photo_Caption", "O7_Caption",
   "O10_Caption", "Q7_Photo_Caption", "Q10_Photo_Caption", "S7_Caption", "S10_Caption",  "W15_Caption",  "W18_Caption",  "W21_Caption",  "X6_Caption",  "Please_Add_Any_Relevant_Photo_caption",
-  
+  'B5_2_Caption', 'O10_Not_In_Use_Caption', 'S10_Not_In_Use_Caption',# NEW
   
   # Notes and Re-coded
   "Sample_Type", "Headcount_Total_Students.re_calc",
@@ -133,6 +145,8 @@ extra_cols.tool7 <- c(
   "Line_Ministry_Sub_Project_Name_And_Description", "Type_Of_Implementing_Partner", "Type_Of_Site_Visit", "Type_Of_Visit", "If_not_a_first_Site_Visit_state_Original_Site_Visit_ID",
   "Reporting_Period", "tpma_location_id",  "Province_Climate", "Survey_Language", "Survey_Language_Other", "IP_Name", "Interviewee_Respondent_Type",  "Sample_info_correct", "Village",
   "instanceID", "formdef_version",
+  "ID_Check", 'School_CBE_Name', 'Type_of_CBE',	'TPMA_Location_Name',	'Entity_Type',	'Academic_year',	'acknowledge', 'B2',# NEW
+  
   
   # PII 
   "B5", "Respondent1_Phone_Number", "Respondent2_Phone_Number",
@@ -140,6 +154,7 @@ extra_cols.tool7 <- c(
   
   # GPS
   "Geopoint1-Latitude",	"Geopoint1-Longitude",	"Geopoint1-Altitude",	"Geopoint1-Accuracy",
+  'Geopoint2-Latitude',	'Geopoint2-Longitude',	'Geopoint2-Altitude',	'Geopoint2-Accuracy', # NEW
   
   # URL
   "text_audit_full",
@@ -165,12 +180,17 @@ extra_cols.tool6 <- c(
   "Line_Ministry_Sub_Project_Name_And_Description", "Type_Of_Implementing_Partner", "Type_Of_Site_Visit", "Type_Of_Visit", "If_not_a_first_Site_Visit_state_Original_Site_Visit_ID",
   "Reporting_Period", "tpma_location_id",  "Province_Climate", "Survey_Language", "Survey_Language_Other", "IP_Name", "Interviewee_Respondent_Type", "Sample_info_correct", "Village",
   "instanceID", "formdef_version",
+  "ID_Check", 'School_CBE_Name', 'Type_of_CBE',	'TPMA_Location_Name',	'Entity_Type',	'Academic_year',	'acknowledge',# NEW
+  "A2", # NEW
+  
   
   # PII 
   "Respondent_Name", "Respondent1_Phone_Number", "Respondent2_Phone_Number",
   
   # GPS
   "Geopoint1-Latitude",	"Geopoint1-Longitude",	"Geopoint1-Altitude",	"Geopoint1-Accuracy",
+  'Geopoint2-Latitude',	'Geopoint2-Longitude',	'Geopoint2-Altitude',	'Geopoint2-Accuracy', # NEW
+  
   
   # URL
   "text_audit_full",
@@ -194,12 +214,15 @@ extra_cols.tool5 <- c(
   "Line_Ministry_Sub_Project_Name_And_Description", "Type_Of_Implementing_Partner", "Type_Of_Site_Visit", "Type_Of_Visit", "If_not_a_first_Site_Visit_state_Original_Site_Visit_ID",
   "Reporting_Period", "tpma_location_id",  "Province_Climate", "Survey_Language", "Survey_Language_Other", "IP_Name", "Interviewee_Respondent_Type", "Interviewee_Respondent_Type_Other", "Village",
   "instanceID", "formdef_version",
+  "ID_Check", "School_CBE_Name", "Academic_Year",	"Sample_info_correct",	"acknowledge", "A2", "B2",# NEW
   
   # PII 
   "Respondent_Full_Name", "Respondent1_Phone_Number", "Respondent2_Phone_Number",
   
   # GPS
   "Geopoint1-Latitude",	"Geopoint1-Longitude",	"Geopoint1-Altitude",	"Geopoint1-Accuracy",
+  'Geopoint2-Latitude',	'Geopoint2-Longitude',	'Geopoint2-Altitude',	'Geopoint2-Accuracy', # NEW
+  
   
   # URL
   "text_audit_full",
@@ -226,12 +249,15 @@ extra_cols.tool4 <- c(
   "Line_Ministry_Sub_Project_Name_And_Description", "Type_Of_Implementing_Partner", "Type_Of_Site_Visit", "Type_Of_Visit", "If_not_a_first_Site_Visit_state_Original_Site_Visit_ID",
   "Reporting_Period", "tpma_location_id",  "Province_Climate", "Survey_Language", "Survey_Language_Other", "IP_Name", "Interviewee_Respondent_Type", "Village",
   "instanceID", "formdef_version",
+  "ID_Check", "School_CBE_Name", 'TPMA_Location_Name',	"Entity_Type",	"Academic_Year",	"acknowledge", "B2",# NEW
+  'G8_Translation', "H3_Translation",# NEW
   
   # PII 
   "Respondent_Full_Name", "Respondent1_Phone_Number", "Respondent2_Phone_Number",
   
   # GPS
   "Geopoint1-Latitude",	"Geopoint1-Longitude",	"Geopoint1-Altitude",	"Geopoint1-Accuracy",
+  'Geopoint2-Latitude',	'Geopoint2-Longitude',	'Geopoint2-Altitude',	'Geopoint2-Accuracy', # NEW
   
   # URL
   "text_audit_full",
@@ -260,12 +286,17 @@ extra_cols.tool3 <- c(
   "Class10_N_Sample", "Class11_N_Sample", "Class12_N_Sample", "School_Status_Sample", "School_Status_EMIS",  "Province_Climate", "Survey_Language", "Survey_Language_Other", "IP_Name",
   "Classes", # To be confirmed
   "Interviewee_Respondent_Type", 'Interviewee_Respondent_Type_Other', "Village", "instanceID", "formdef_version",
+  "ID_Check", "School_CBE_Name", "TPMA_Location_Name", "Entity_Type",	"Academic_Year",	"acknowledge",  # NEW
+  "Grade_Class_1",	"Grade_Class_2",	"Grade_Class_3",	"Grade_Class_4",	"Grade_Class_5",	"Grade_Class_6", #NEW
+  "Grade_Class_7", "Grade_Class_8",	"Grade_Class_9",	"Grade_Class_10",	"join_indx2", #NEW
+  
   
   # PII 
   "B3", "B4A1", "B4A2", "B10A1", "B10A4",
   
   # GPS
   "Geopoint1-Latitude",	"Geopoint1-Longitude",	"Geopoint1-Altitude",	"Geopoint1-Accuracy",
+  'Geopoint2-Latitude',	'Geopoint2-Longitude',	'Geopoint2-Altitude',	'Geopoint2-Accuracy', # NEW
   
   # URL
   "text_audit_full",
@@ -280,7 +311,7 @@ extra_cols.tool3 <- c(
   "Support_Respondents_count",	"SET-OF-Support_Respondents", "Count_Support_Respondents",	"SET-OF-Enrollement_Attendance_Summary", "Count_Enrollement_Attendance_Summary",	"Count_Grade_Details",
   "Grade_Details_count",	"SET-OF-Grade_Details","Todays_Attendance_Detail_count",	"SET-OF-Todays_Attendance_Detail",	"Count_Todays_Attendance_Detail",
   "LastWeek_Attendance_Detail_count",	"SET-OF-LastWeek_Attendance_Detail",	"Count_LastWeek_Attendance_Detail", "Student_Headcount_count",	"SET-OF-Student_Headcount",	"SET-OF-Relevant_photos",
-  
+  "SET-OF-Tool3_Grades_Repeat", "Tool3_Grades_Repeat_count", # NEW
   
   # Surveyor Comments
   "Surveyor_Comments",	"Surveyor_Comments_Translation",
@@ -300,12 +331,15 @@ extra_cols.tool2 <- c(
   "Line_Ministry_Sub_Project_Name_And_Description", "Type_Of_Implementing_Partner", "Type_Of_Site_Visit", "Type_Of_Visit", "If_not_a_first_Site_Visit_state_Original_Site_Visit_ID",
   "Reporting_Period", "tpma_location_id", "Province_Climate", "Survey_Language", "Survey_Language_Other", "IP_Name", "Interviewee_Respondent_Type", "Interviewee_Respondent_Type_Other",
   "Village", "instanceID", "formdef_version",
+  "ID_Check", "School_CBE_Name", "TPMA_Location_Name","Entity_Type", "Academic_Year",	"acknowledge", "B2", #NEW
+  
   
   # PII 
   "C4_Respondent_name", "C6_Respondent_phone_number1", "C6_Respondent_phone_number2", "D5", "Respondent1_Phone_Number", "Respondent2_Phone_Number", "D10", "D11",
   
   # GPS
   "Geopoint1-Latitude",	"Geopoint1-Longitude",	"Geopoint1-Altitude",	"Geopoint1-Accuracy",
+  "Geopoint2-Latitude",	"Geopoint2-Longitude",	"Geopoint2-Altitude",	"Geopoint2-Accuracy", # NEW
   
   # URL
   "text_audit_full",
@@ -313,6 +347,7 @@ extra_cols.tool2 <- c(
   # Captions
   "B5_Caption", "Photo_closure_1_Caption", "Photo_closure_2_Caption", "G6_Caption", "H12_Caption", "H15_Caption", "i12_Caption", "i15_Caption", "J12_Caption", "J15_Caption" ,
   "Please_Add_Any_Relevant_Photo_caption",
+  "H15_Not_In_Use_Caption", "i15_Not_In_Use_Caption", "J15_Not_In_Use_Caption", #NEW
   
   # Notes and Re-coded
   "Sample_Type",
@@ -346,6 +381,7 @@ clean_data.tool9_for_client <- clean_data.tool9
 
 # Remove extra cols -------------------------------------------------------
 clean_data.tool1_for_client$data <- clean_data.tool1$data %>% select(-any_of(c(extra_cols.tool1, qa_cols)))
+
 clean_data.tool1_for_client$Support_Respondents <- clean_data.tool1$Support_Respondents %>% select(-any_of(c(extra_cols.tool1, qa_cols, "starttime"))) |>
   left_join(clean_data.tool1_for_client$data |> select(KEY, EMIS_School_ID_CBE_KEY), by = c("PARENT_KEY" = "KEY")) |> 
   select(Site_Visit_ID, EMIS_School_ID_CBE_KEY, everything())
@@ -564,7 +600,7 @@ clean_data.tool8_for_client$Relevant_photos <- clean_data.tool8$Relevant_photos 
 
 clean_data.tool9_for_client$data <- clean_data.tool9$data %>% select(-any_of(c(extra_cols.tool9, qa_cols)))
 clean_data.tool9_for_client$Relevant_photos <- clean_data.tool9$Relevant_photos %>% mutate(PARENT_KEY = as.character(PARENT_KEY)) %>%  select(-any_of(c(extra_cols.tool9, qa_cols, "starttime"))) |>
-  left_join(clean_data.tool9$data |> select(KEY, IP_Name, Site_Visit_ID), by = c("PARENT_KEY"="KEY")) |>
+  left_join(clean_data.tool9$data |> select(KEY, IP_Name), by = c("PARENT_KEY"="KEY")) |>
   select(Site_Visit_ID, IP_Name, everything())
 
 # remove extra objects from environment  
