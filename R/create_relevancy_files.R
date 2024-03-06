@@ -12,36 +12,45 @@ tool8 <- read_excel("./input/tools/Tool 8_EERA CBE_Teacher Interview_R2.xlsx") %
 tool9 <- read_excel("./input/tools/Tool 9_EERA CBE_IP Interview_R2.xlsx") %>%  mutate(name = trimws(name))
 
 # Create the relevancy Files ---------------------------------------------------
-relevancy_file1 <- create_relevancy_file(tool1, c('A32', 'B19', 'F2', 'F4', 'J24', 'L2', 'Please_Add_Any_Relevant_Photo', 'Surveyor_Comments',
+relevancy_file1 <- create_relevancy_file(tool1, c('A32_QA', 'B19_QA', 'F2_QA', 'F4_QA', 'J24_QA', 'L2_QA', 'Please_Add_Any_Relevant_Photo_QA', 'Surveyor_Comments_Translation',
                                                   'A32_Caption', 'B19_Caption', 'F2_Caption', 'F4_Caption', 'J24_Caption', 'L2_Caption', "Please_Add_Any_Relevant_Photo_caption"))
 
-relevancy_file2 <- create_relevancy_file(tool2, c('C14_Audio', 'Surveyor_Comments', 'B5', 'Photo_closure_1', 'Photo_closure_2', 'G6', 'H15', 'H15_Not_In_Use','i15', 'i15_Not_In_Use',
-                                                  'J15', 'J15_Not_In_Use', 'Please_Add_Any_Relevant_Photo', 'B5_Caption', 'Photo_closure_1_Caption', 'Photo_closure_2_Caption',
+relevancy_file2 <- create_relevancy_file(tool2, c('C14_Audio_Translation', 'Surveyor_Comments_Translation', 'B5_QA', 'Photo_closure_1_QA', 'Photo_closure_2_QA', 'G6_QA', 'H15_QA',
+                                                  'H15_Not_In_Use_QA','i15_QA', 'i15_Not_In_Use_QA',
+                                                  'J15_QA', 'J15_Not_In_Use_QA', 'Please_Add_Any_Relevant_Photo_QA', 'B5_Caption', 'Photo_closure_1_Caption', 'Photo_closure_2_Caption',
                                                   'G6_Caption',  'H15_Caption',  'H15_Not_In_Use_Caption', 'i15_Caption', 'i15_Not_In_Use_Caption', 'J15_Caption' , 'J15_Not_In_Use_Caption',
                                                   'Please_Add_Any_Relevant_Photo_caption'))
 
-relevancy_file3 <- create_relevancy_file(tool3, c('No_Please_Explain', 'Surveyor_Comments', 'C1A2', 'D4', 'D4_2', 'D8', 'D8_2', 'E2', 'E2_2', 'Please_Add_Any_Relevant_Photo',
+relevancy_file3 <- create_relevancy_file(tool3, c('No_Please_Explain_Translation', 'Surveyor_Comments_Translation', 'C1A2_QA', 'D4_QA', 'D4_2_QA', 'D8_QA',
+                                                  'D8_2_QA', 'E2_QA', 'E2_2_QA', 'Please_Add_Any_Relevant_Photo_QA',
                                                   'C1A2_Caption', 'D4_Caption', 'D4_2_Caption', 'D8_Caption', 'D8_2_Caption', 'E2_Caption', 'E2_2_Caption', 'Please_Add_Any_Relevant_Photo_caption'))
 
-relevancy_file4 <- create_relevancy_file(tool4, c('Surveyor_Comments', 'Please_Add_Any_Relevant_Photo', 'Please_Add_Any_Relevant_Photo_caption'))
+relevancy_file4 <- create_relevancy_file(tool4, c('Surveyor_Comments_Translation', 'Please_Add_Any_Relevant_Photo_QA', 'Please_Add_Any_Relevant_Photo_caption',
+                                                  'Respondent2_Phone_Number', 'G8_Translation', 'H3_Translation'))
 
-relevancy_file5 <- create_relevancy_file(tool5, c('C5_Other_Audio', 'C7_Other_Audio', 'Surveyor_Comments', 'C3', 'Under_Construction_Toilet_Photo', 'Useable_Toilet_Photo', 'Non_Useable_Toilet_Photo',
-                                                  'C11', 'Please_Add_Any_Relevant_Photo', 'C3_Caption', 'Under_Construction_Toilet_Photo_Caption', 'Useable_Toilet_Photo_Caption',
-                                                  'Non_Useable_Toilet_Photo_Caption', 'C11_1_Caption', 'Please_Add_Any_Relevant_Photo_caption'))
+relevancy_file5 <- create_relevancy_file(tool5, c('C5_Other_Audio_Translation', 'C7_Other_Audio_Translation', 'Surveyor_Comments_Translation', 'C3_QA', 'Under_Construction_Toilet_Photo_QA', 
+                                                  'Useable_Toilet_Photo_QA', 'Non_Useable_Toilet_Photo_QA',
+                                                  'C11_1_QA', 'Please_Add_Any_Relevant_Photo_QA', 'C3_Caption', 'Under_Construction_Toilet_Photo_Caption', 'Useable_Toilet_Photo_Caption',
+                                                  'Non_Useable_Toilet_Photo_Caption', 'C11_1_Caption', 'Please_Add_Any_Relevant_Photo_caption','Respondent2_Phone_Number'
+                                                  ))
 
-relevancy_file6 <- create_relevancy_file(tool6, c('Surveyor_Comments'))
+relevancy_file6 <- create_relevancy_file(tool6, c('Surveyor_Comments_Translation'))
 
-relevancy_file7 <- create_relevancy_file(tool7, c( 'Surveyor_Comments', 'C10_image', 'C10_image_Caption'))
+relevancy_file7 <- create_relevancy_file(tool7, c('Surveyor_Comments_Translation', 'C10_image_QA', 'C10_image_Caption'))
 
-relevancy_file8 <- create_relevancy_file(tool8, c('Surveyor_Comments', 'B5', 'B5_2', 'E22_Photo1', 'E22_Photo2', 'E22_Photo3', 'J4_Students_Enrolment_Book_Photo', 'O10', 'O10_Not_In_Use',
-                                                  'Q10', 'Q10_Not_In_Use', 'S10', 'S10_Not_In_Use', 'W15', 'W18', 'W21', 'X6', 'Please_Add_Any_Relevant_Photo', 'B5_Caption', 'B5_2_Caption',
+relevancy_file8 <- create_relevancy_file(tool8, c('Surveyor_Comments_Translation', 'B5_QA', 'B5_2_QA', 'E22_Photo1_QA', 'E22_Photo2_QA', 'E22_Photo3_QA', 'J4_Students_Enrolment_Book_Photo_QA',
+                                                  'O10_QA', 'O10_Not_In_Use_QA',
+                                                  'Q10_QA', 'Q10_Not_In_Use_QA', 'S10_QA', 'S10_Not_In_Use_QA', 'W15_QA', 'W18_QA', 'W21_QA', 'X6_QA', 'Please_Add_Any_Relevant_Photo_QA', 
+                                                  'B5_Caption', 'B5_2_Caption',
                                                   'E22_Photo1_Caption', 'E22_Photo2_Caption', 'E22_Photo3_Caption', 'J4_Students_Enrolment_Book_Photo_Caption', 'O10_Caption' ,
-                                                  'O10_Not_In_Use_Caption' , 'Q10_Caption' , 'Q10_Not_In_Use_Caption' , 'S10_Caption' , 'S10_Not_In_Use_Caption' , 'W15_Caption' ,'W18_Caption' ,'W21_Caption' ,
-                                                  'X6_Caption' , 'Please_Add_Any_Relevant_Photo_caption'))
+                                                  'O10_Not_In_Use_Caption' , 'Q10_Caption' , 'Q10_Not_In_Use_Caption' , 'S10_Caption' , 'S10_Not_In_Use_Caption' , 'W15_Caption' ,'W18_Caption', 
+                                                  'W21_Caption' ,
+                                                  'X6_Caption' , 'Please_Add_Any_Relevant_Photo_caption', 'Respondent2_Phone_Number'))
 
 
-relevancy_file9 <- create_relevancy_file(tool9, c('A15_Audio', 'Surveyor_Comments', 'A7_Photo1', 'A7_Photo2_QA_Photo', 'B2_Photo', 'B6_Logbook_Photo', 'Please_Add_Any_Relevant_Photo',
-                                                  'A7_Photo1_Caption', 'A7_Photo2_QA_Photo_Caption', 'B2_Photo_Caption' , 'B6_Logbook_Photo_Caption' , 'Please_Add_Any_Relevant_Photo_caption'))
+relevancy_file9 <- create_relevancy_file(tool9, c('A15_Audio_Translation', 'Surveyor_Comments_Translation', 'A7_Photo1_QA', 'A7_Photo2_QA_Photo_QA', 'B2_Photo_QA', 'B6_Logbook_Photo_QA',
+                                                  'Please_Add_Any_Relevant_Photo_QA', 'A7_Photo1_Caption', 'A7_Photo2_QA_Photo_Caption', 'B2_Photo_Caption' , 'B6_Logbook_Photo_Caption' ,
+                                                  'Please_Add_Any_Relevant_Photo_caption', 'Respondent2_Phone_Number'))
 
 # Export outputs ---------------------------------------------------------------
 write.xlsx(relevancy_file1, "./input/relevancy_files/relevancy_file_tool1.xlsx")
