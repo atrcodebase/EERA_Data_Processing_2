@@ -203,9 +203,8 @@ clean_data.tool8$Relevant_photos <- clean_data.tool8$Relevant_photos |>
   select(any_of(meta_cols), everything())
 
 ## Tool 9: -----
-if(nrow(clean_data.tool9$Relevant_photos) > 0){
-  clean_data.tool9$Relevant_photos <- clean_data.tool9$Relevant_photos |>
-    left_join(select(clean_data.tool9$data, any_of(meta_cols), KEY), by = c("PARENT_KEY" = "KEY")) |>
-    select(any_of(meta_cols), everything())
-}
+clean_data.tool9$Relevant_photos <- clean_data.tool9$Relevant_photos |>
+  mutate(PARENT_KEY = as.character(PARENT_KEY)) |>
+  left_join(select(clean_data.tool9$data, any_of(meta_cols), KEY), by = c("PARENT_KEY" = "KEY")) |>
+  select(any_of(meta_cols), everything())
 
