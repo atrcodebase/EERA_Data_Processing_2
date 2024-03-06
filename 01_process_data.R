@@ -246,7 +246,7 @@ source("R/main_sheet_to_repeat_sheets.R")
 
 
 # Data for Weekly Report -------------------------------------------------------
-source("R/data_for_weekly_report.R")
+# source("R/data_for_weekly_report.R")
 
 
 # Remove the rejected and pilot interviews -------------------------------------
@@ -307,7 +307,7 @@ source("R/attach_labels.R")
 
 # prepare data sets to export  -------------------------------------------- NOW
 ## remove extra columns
-file.edit("R/remove_extra_columns.R")
+source("R/remove_extra_columns.R")
 
 
 # attach labels to calculates cols ---------------------------------------- PENDING
@@ -319,4 +319,4 @@ file.edit("R/remove_extra_columns.R")
 
 
 # export data sets and issues --------------------------------------------- NOW
-file.edit("R/export_outputs.R")
+source("R/export_outputs.R")
