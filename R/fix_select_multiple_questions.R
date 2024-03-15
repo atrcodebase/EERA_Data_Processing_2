@@ -1,3 +1,10 @@
+# Tool 0 ----------------------------------------------------------------------
+for(sh in names(clean_data.tool0)) {
+  clean_data.tool0[[sh]] <- update_series_cols(data = clean_data.tool0[[sh]],
+                                               tool = kobo_tool.tool0$survey,
+                                               question_separator = "_")
+}
+
 # Tool 1 ----------------------------------------------------------------------
 clean_data.tool1$data <- update_series_cols(data = clean_data.tool1$data, 
                                             tool = kobo_tool.tool1$survey, 
