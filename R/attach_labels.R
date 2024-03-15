@@ -2,6 +2,7 @@
 # source("R/functions/labeler_function.R")
 
 # Cloning df
+clean_data.tool0_ulabeled <- clean_data.tool0
 clean_data.tool1_ulabeled <- clean_data.tool1
 clean_data.tool2_ulabeled <- clean_data.tool2
 clean_data.tool3_ulabeled <- clean_data.tool3
@@ -12,6 +13,7 @@ clean_data.tool7_ulabeled <- clean_data.tool7
 clean_data.tool8_ulabeled <- clean_data.tool8
 clean_data.tool9_ulabeled <- clean_data.tool9
 
+tool0_path = "./input/tools/Tool 0.EERA Public School_CBE - Data Entry Tool - R2.xlsx"
 tool1_path = "./input/tools/Tool 1_EERA School Indepth Visit_Principal Interview_R2.xlsx"
 tool2_path = "./input/tools/Tool 2_EERA School Light Tool_R2.xlsx"
 tool3_path = "./input/tools/Tool 3_EERA School Student Documents and Headcount Monitoring_R2.xlsx"
@@ -21,6 +23,17 @@ tool6_path = "./input/tools/Tool 6_EERA School_CBE Student Parent Interview_R2.x
 tool7_path = "./input/tools/Tool 7_EERA School_CBE Shura Member Interview_R2.xlsx"
 tool8_path = "./input/tools/Tool 8_EERA CBE_Teacher Interview_R2.xlsx"
 tool9_path = "./input/tools/Tool 9_EERA CBE_IP Interview_R2.xlsx"
+
+# Tool 0 ------------------------------------------------------------------
+for (sh in names(clean_data.tool0)) {
+  clean_data.tool0[[sh]] <- labeler(
+    data = clean_data.tool0[[sh]],
+    tool = tool0_path,
+    survey_label = "label",
+    choice_lable = "label"
+  )
+}
+
 
 # Tool 1 ------------------------------------------------------------------
 clean_data.tool1$data <- labeler(
