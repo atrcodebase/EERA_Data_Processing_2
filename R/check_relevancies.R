@@ -7,6 +7,7 @@ join_dfs <- function(df1, df2){
 } 
 
 # Cloning df
+clean_data.tool0_joined <- clean_data.tool0
 clean_data.tool1_joined <- clean_data.tool1
 clean_data.tool2_joined <- clean_data.tool2
 clean_data.tool3_joined <- clean_data.tool3
@@ -18,6 +19,13 @@ clean_data.tool8_joined <- clean_data.tool8
 clean_data.tool9_joined <- clean_data.tool9
 
 # joining DFs to be able to check the relevancy failure in child s -------------
+# Tool 0
+
+for(sheet in names(clean_data.tool0_joined)[-1]){
+  # Join
+  clean_data.tool0_joined[[sheet]] <- join_dfs(clean_data.tool0_joined[[sheet]], clean_data.tool0$data |> select(!any_of(meta_cols)))
+}
+
 # Tool 1
 clean_data.tool1_joined$Support_Respondents <- join_dfs(clean_data.tool1$Support_Respondents, clean_data.tool1$data |> select(!any_of(meta_cols)))
 clean_data.tool1_joined$School_Operationality <- join_dfs(clean_data.tool1$School_Operationality, clean_data.tool1$data |> select(!any_of(meta_cols)))
@@ -95,6 +103,7 @@ clean_data.tool9_joined$Relevant_photos <- join_dfs(clean_data.tool9$Relevant_ph
 
 
 # listing the required questions -----------------------------------------------
+tool0.notrequired_questions <- kobo_tool.tool0$survey %>% filter((required %in% c("False", "FALSE", "") | is.na(required)) & !is.na(name)) %>% pull(name)
 tool1.notrequired_questions <- kobo_tool.tool1$survey %>% filter((required %in% c("False", "FALSE", "") | is.na(required)) & !is.na(name)) %>% pull(name)
 tool2.notrequired_questions <- kobo_tool.tool2$survey %>% filter((required %in% c("False", "FALSE", "") | is.na(required)) & !is.na(name)) %>% pull(name)
 tool3.notrequired_questions <- kobo_tool.tool3$survey %>% filter((required %in% c("False", "FALSE", "") | is.na(required)) & !is.na(name)) %>% pull(name)
@@ -108,6 +117,21 @@ tool9.notrequired_questions <- kobo_tool.tool9$survey %>% filter((required %in% 
 
 # checking the relevancy issues ------------------------------------------------
 relevancy_issues <- plyr::rbind.fill(
+  # Tool 0
+  rbind(
+    check_relevancy_rules(data = clean_data.tool0_joined$data, tool_relevancy =  relevancy_file.tool0, sheet_name="data"),
+    check_relevancy_rules(data = clean_data.tool0_joined$Tool3_Classes, tool_relevancy =  relevancy_file.tool0, sheet_name="Tool3_Classes"),
+    check_relevancy_rules(data = clean_data.tool0_joined$Tool3_T3_Classes_LW, tool_relevancy =  relevancy_file.tool0, sheet_name="Tool3_T3_Classes_LW"),
+    check_relevancy_rules(data = clean_data.tool0_joined$Tool3_T2_Classes_VD, tool_relevancy =  relevancy_file.tool0, sheet_name="Tool3_T2_Classes_VD"),
+    check_relevancy_rules(data = clean_data.tool0_joined$Tool1_Timetable_Year, tool_relevancy =  relevancy_file.tool0, sheet_name="Tool1_Timetable_Year"),
+    check_relevancy_rules(data = clean_data.tool0_joined$Tool1_Timetable1_Repeat, tool_relevancy =  relevancy_file.tool0, sheet_name="Tool1_Timetable1_Repeat"),
+    check_relevancy_rules(data = clean_data.tool0_joined$Tool1_Timetable2_Repeat, tool_relevancy =  relevancy_file.tool0, sheet_name="Tool1_Timetable2_Repeat"),
+    check_relevancy_rules(data = clean_data.tool0_joined$Tool1_Timetable3_Repeat, tool_relevancy =  relevancy_file.tool0, sheet_name="Tool1_Timetable3_Repeat"),
+    check_relevancy_rules(data = clean_data.tool0_joined$Tool1_Timetable4_Repeat, tool_relevancy =  relevancy_file.tool0, sheet_name="Tool1_Timetable4_Repeat"),
+    check_relevancy_rules(data = clean_data.tool0_joined$Tool3_Grades_Repeat, tool_relevancy =  relevancy_file.tool0, sheet_name="Tool3_Grades_Repeat")
+  ) |>
+    mutate(tool = "Tool - Data Entry", Sample_type = "Public School"),
+  
   # Tool 1
   rbind(
     check_relevancy_rules(data = clean_data.tool1_joined$data, tool_relevancy =  relevancy_file.tool1, sheet_name="data"),
