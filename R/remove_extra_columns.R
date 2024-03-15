@@ -214,7 +214,7 @@ extra_cols.tool5 <- c(
   "Line_Ministry_Sub_Project_Name_And_Description", "Type_Of_Implementing_Partner", "Type_Of_Site_Visit", "Type_Of_Visit", "If_not_a_first_Site_Visit_state_Original_Site_Visit_ID",
   "Reporting_Period", "tpma_location_id",  "Province_Climate", "Survey_Language", "Survey_Language_Other", "IP_Name", "Interviewee_Respondent_Type", "Interviewee_Respondent_Type_Other", "Village",
   "instanceID", "formdef_version",
-  "ID_Check", "School_CBE_Name", "Academic_Year",	"Sample_info_correct",	"acknowledge", "A2", "B2",# NEW
+  "ID_Check", "School_CBE_Name", "Academic_Year",	"Sample_info_correct",	"acknowledge", "A2", "B2", 'TPMA_Location_Name',	'Entity_Type',# NEW
   
   # PII 
   "Respondent_Full_Name", "Respondent1_Phone_Number", "Respondent2_Phone_Number",
