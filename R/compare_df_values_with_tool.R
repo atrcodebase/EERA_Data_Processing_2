@@ -64,7 +64,7 @@ wrong_choices_result <- rbind(
       df = select(clean_data.tool0$Tool3_Grades_Repeat, !any_of(to_be_excluded_questions)),
       kobotool.survey = kobo_tool.tool0$survey,
       kobotool.choices = kobo_tool.tool0$choices) |> 
-      mutate(Tab_Name = "Tool3_Grades_Repeat"),
+      mutate(Tab_Name = "Tool3_Grades_Repeat")
   ) |> 
     mutate(tool = "Tool Data Entry", Sample_Type = "Public School"),
   
