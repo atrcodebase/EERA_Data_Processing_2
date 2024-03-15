@@ -34,6 +34,7 @@ meta_cols.qa_sheet <- c(Visit_ID = "Site_Visit_ID", "School Code", "Sample_Type"
 
 # Read inputs --------------------------------------------------------------
 # Data sets
+raw_data.tool0 = read_xlsx_sheets(raw_data_path$tool0)
 raw_data.tool1 = read_xlsx_sheets(raw_data_path$tool1)
 raw_data.tool2 = read_xlsx_sheets(raw_data_path$tool2)
 raw_data.tool3 = read_xlsx_sheets(raw_data_path$tool3)
@@ -45,6 +46,7 @@ raw_data.tool8 = read_xlsx_sheets(raw_data_path$tool8)
 raw_data.tool9 = read_xlsx_sheets(raw_data_path$tool9)
 
 # Tools
+kobo_tool.tool0 = read_xlsx_sheets(kobo_tools_path$tool0)
 kobo_tool.tool1 = read_xlsx_sheets(kobo_tools_path$tool1)
 kobo_tool.tool2 = read_xlsx_sheets(kobo_tools_path$tool2)
 kobo_tool.tool3 = read_xlsx_sheets(kobo_tools_path$tool3)
@@ -57,6 +59,7 @@ kobo_tool.tool9 = read_xlsx_sheets(kobo_tools_path$tool9)
 
 
 # Relevancy files
+relevancy_file.tool0 = read_xlsx_sheets(relevancy_files_path$tool0)
 relevancy_file.tool1 = read_xlsx_sheets(relevancy_files_path$tool1)
 relevancy_file.tool2 = read_xlsx_sheets(relevancy_files_path$tool2)
 relevancy_file.tool3 = read_xlsx_sheets(relevancy_files_path$tool3)
@@ -90,7 +93,8 @@ correction_log = plyr::rbind.fill(
                                                                           Key = as.character(Key)),
   read_sheet(qa_sheet_url_ps, sheet = "Correction_Log WASH") |> mutate(Tool = "Tool 5 - WASH", Index = as.character(Index), old_value = as.character(old_value), New_Value = as.character(New_Value), Key = as.character(Key)),
   read_sheet(qa_sheet_url_ps, sheet = "Correction_Log Parent") |> rename(Key = KEY) |> mutate(Tool = "Tool 6 - Parent", Index = as.character(Index), old_value = as.character(old_value), New_Value = as.character(New_Value), Remarks = as.character(Remarks)),
-  read_sheet(qa_sheet_url_ps, sheet = "Correction _Log Shura") |> mutate(Tool = "Tool 7 - Shura", Index = as.character(Index), old_value = as.character(old_value), New_Value = as.character(New_Value), Key = as.character(Key))
+  read_sheet(qa_sheet_url_ps, sheet = "Correction _Log Shura") |> mutate(Tool = "Tool 7 - Shura", Index = as.character(Index), old_value = as.character(old_value), New_Value = as.character(New_Value), Key = as.character(Key)),
+  read_sheet(qa_sheet_url_ps, sheet = "Correction_Log Data_Entry") |> mutate(Tool = "Tool 0 - Data Entry")
 )
 
 # Turn NULL values to NA for old and new value columns
@@ -104,9 +108,9 @@ correction_log <- correction_log %>%
       is.null(old_value) | old_value == "NULL" ~ NA_character_,
       TRUE ~ old_value
     )
-  ) %>% 
+  ) %>%
   # Exclude if Unique_key, question, and old value combo is NA
-  filter(!is.na(KEY_Unique) & !is.na(New_Value) & !is.na(old_value))
+  filter(!(is.na(KEY_Unique) & is.na(Question) & is.na(New_Value) & is.na(old_value)))
 
 
 correction_log_ps <- correction_log |> filter(is.na(Sample_Type) | Sample_Type == "Public School")
@@ -131,7 +135,7 @@ correction_log_cbe <- correction_log_cbe %>%
     )
   ) %>% 
   # Exclude if Unique_key, question, and old value combo is NA
-  filter(!is.na(KEY_Unique) & !is.na(New_Value) & !is.na(old_value))
+  filter(!(is.na(KEY_Unique) & is.na(New_Value) & is.na(old_value)))
 
 # Remove extra object
 rm(correction_log)
