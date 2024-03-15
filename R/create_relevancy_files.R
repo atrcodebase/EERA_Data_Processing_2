@@ -10,6 +10,7 @@ tool6 <- read_excel("./input/tools/Tool 6_EERA School_CBE Student Parent Intervi
 tool7 <- read_excel("./input/tools/Tool 7_EERA School_CBE Shura Member Interview_R2.xlsx") %>%  mutate(name = trimws(name))
 tool8 <- read_excel("./input/tools/Tool 8_EERA CBE_Teacher Interview_R2.xlsx") %>%  mutate(name = trimws(name))
 tool9 <- read_excel("./input/tools/Tool 9_EERA CBE_IP Interview_R2.xlsx") %>%  mutate(name = trimws(name))
+tool0 <- read_excel("./input/tools/Tool 0.EERA Public School_CBE - Data Entry Tool - R2.xlsx") %>% mutate(name = trimws(name))
 
 # Create the relevancy Files ---------------------------------------------------
 relevancy_file1 <- create_relevancy_file(tool1, c('A32_QA', 'B19_QA', 'F2_QA', 'F4_QA', 'J24_QA', 'L2_QA', 'Please_Add_Any_Relevant_Photo_QA', 'Surveyor_Comments_Translation',
@@ -52,6 +53,8 @@ relevancy_file9 <- create_relevancy_file(tool9, c('A15_Audio_Translation', 'Surv
                                                   'Please_Add_Any_Relevant_Photo_QA', 'A7_Photo1_Caption', 'A7_Photo2_QA_Photo_Caption', 'B2_Photo_Caption' , 'B6_Logbook_Photo_Caption' ,
                                                   'Please_Add_Any_Relevant_Photo_caption', 'Respondent2_Phone_Number'))
 
+relevancy_file0 <- create_relevancy_file(tool0)
+
 # Export outputs ---------------------------------------------------------------
 write.xlsx(relevancy_file1, "./input/relevancy_files/relevancy_file_tool1.xlsx")
 write.xlsx(relevancy_file2, "./input/relevancy_files/relevancy_file_tool2.xlsx")
@@ -62,3 +65,4 @@ write.xlsx(relevancy_file6, "./input/relevancy_files/relevancy_file_tool6.xlsx")
 write.xlsx(relevancy_file7, "./input/relevancy_files/relevancy_file_tool7.xlsx")
 write.xlsx(relevancy_file8, "./input/relevancy_files/relevancy_file_tool8.xlsx")
 write.xlsx(relevancy_file9, "./input/relevancy_files/relevancy_file_tool9.xlsx")
+write.xlsx(relevancy_file0, "./input/relevancy_files/relevancy_file_tool0.xlsx")
