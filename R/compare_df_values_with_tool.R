@@ -1,6 +1,6 @@
 source("R/functions/check_sm_so_questions_value.R")
 
-to_be_excluded_questions = c("Province_filter", "Surveyor_Name", "Site_Visit_ID", "Sample_Type")
+to_be_excluded_questions = c("Province_filter", "Surveyor_Name", "Site_Visit_ID", "Sample_Type","Data_Entry_Clerk_Name")
 
 
 wrong_choices_result <- rbind(
