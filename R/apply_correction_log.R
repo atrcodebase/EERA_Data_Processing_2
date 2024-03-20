@@ -38,7 +38,7 @@ form_names_cbe <- unique(correction_log_cbe$tool) |> na.omit()
 # Identify correction log's issue
 correction_log_issues_ps <- correction_log_ps |>
   # Remove the filter for the last runs
-  filter(!is.na(KEY) & !is.na(question)) |>
+  # filter(!is.na(KEY) & !is.na(question)) |>
   mutate(
     issue = case_when(
       # general checks
@@ -110,7 +110,7 @@ correction_log_issues_ps <- correction_log_issues_ps |>
 # Identify correction log's issue
 correction_log_issues_cbe <- correction_log_cbe |>
   # Remove the filter for the last runs
-  filter(!is.na(KEY) & !is.na(question)) |>
+  # filter(!is.na(KEY) & !is.na(question)) |>
   mutate(
     issue = case_when(
       # general checks
